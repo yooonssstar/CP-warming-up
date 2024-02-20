@@ -45,7 +45,7 @@ function popupToggle(){
 	const nav = document.querySelector(".navWrap");
 	const popupClose = document.querySelector('.popupWrap .btnClose');
 	const search = document.querySelector('.search');
-	const searchPopup = document.querySelector('.tySearch').parentElement.parentElement.parentElement.parentElement;
+	const searchPopup = document.querySelector('.popupWrap .searchPop');
 
 	// 검색 popup open
 	search.addEventListener('click',() => {
@@ -69,7 +69,7 @@ function popupToggle(){
 
 // reviewAcitve
 function reviewAcitve() {
-	$('.reviewContWrap > ol > li > a').on('focusin', function () {
+	$('.reviewContWrap > ol > li > a').on('focusin',function(){
 		var reviewNum = $(this).parent('li').index();
 		$('.reviewContWrap > ol > li, .reviewContWrap > ul > li').removeClass('active');
 		$(this).parent('li').addClass('active');
@@ -117,7 +117,7 @@ $(document).ready(function () {
 	reviewAcitve(); // 리뷰 컨텐츠 프로필 클릭 시 해당 리뷰 노출
 	scrollActive(); // nav에 active class와 본문 컨텐츠 영역에 on class 추가
 	popupToggle(); // 팝업 여닫기
-	mobileMenuToggle() // 모바일 메뉴 여닫기
+	mobileMenuToggle(); // 모바일 메뉴 여닫기
 });
 
 window.addEventListener('scroll', function (e) {
