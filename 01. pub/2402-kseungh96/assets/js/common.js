@@ -14,13 +14,17 @@ function headerActive() {
 	});
 }
 
+var body = document.querySelector('body');
+var nav = document.querySelector(".navWrap");
+var dim = document.querySelector('.dim');
+var btnClose = document.querySelector('.moMenu .btnClose');
+var btnMenu = document.querySelector('.moMenu .btnMenu');
+var popupClose = document.querySelector('.popupWrap .btnClose');
+var searchPopup = document.querySelector('.popupWrap.searchPop');
+var search = document.querySelector('.search a');
+
 // mobileMenuToggle
 function mobileMenuToggle(){
-	const body = document.querySelector('body');
-	const nav = document.querySelector(".navWrap");
-	const btnClose = document.querySelector('.moMenu .btnClose');
-	const btnMenu = document.querySelector('.moMenu .btnMenu');
-
 	btnMenu.addEventListener("click",() => {
 		nav.style.left = "0%";
 		nav.classList.add('active');
@@ -28,7 +32,6 @@ function mobileMenuToggle(){
 		btnMenu.style.display = "none";
 		body.style.overflow = "hidden";
 	});
-
 	btnClose.addEventListener("click",() => {
 		nav.style.left = "100%";
 		nav.classList.remove('active');
@@ -40,26 +43,15 @@ function mobileMenuToggle(){
 
 // popupToggle
 function popupToggle(){
-	const body = document.querySelector('body');
-	const dim = document.querySelector('.dim');
-	const nav = document.querySelector(".navWrap");
-	const popupClose = document.querySelector('.popupWrap .btnClose');
-	const search = document.querySelector('.search');
-	const searchPopup = document.querySelector('.popupWrap .searchPop');
-
-	// 검색 popup open
 	search.addEventListener('click',() => {
 		searchPopup.style.display = "inline-block";
 		dim.style.display = "inline-block";
 		body.style.overflow = "hidden";
 	});
-
-	// popup close
 	popupClose.addEventListener('click',() => {
 		searchPopup.style.display = "none";
 		dim.style.display = "none";
-
-		if ( nav.classList.contains('active') ) {
+		if(nav.classList.contains('active')){
 			body.style.overflow = "hidden";
 		}else{
 			body.style.overflow = "hidden auto";
@@ -81,7 +73,7 @@ function reviewAcitve() {
 function scrollHeaderOn() {
 	if (document.documentElement.scrollTop > 0) {
 		document.querySelector('header').classList.add('on');
-	} else {
+	}else{
 		document.querySelector('header').classList.remove('on');
 	}
 }
