@@ -111,7 +111,8 @@ input { position:relative; width:100%; height:47px; padding:0 20px; border:none;
 .iconListWrap ul li span { display:block; margin:10px 0 20px; }
 .iconListWrap ul li strong { display:block; }
 /* popup */
-.popupWrap { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:100002; display:none; width:80%; max-width:1200px; background-color:var(--color-white); }
+.popupWrap { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:100002; display:none; width:80%; max-width:1200px; background-color:var(--color-white); opacity:0; transition:opacity .5s ease; }
+.popupWrap.on { display:inline-block; opacity:1; transition:opacity .5s ease; }
 .popupTop { display:inline-block; text-align:right; width:100%; height:40px; background-color:var(--color-bg); }
 .popupTop .btnClose { position:relative; display:inline-block; width:40px; height:100%; background-color:var(--color-main); }
 .popupTop .btnClose::before,
@@ -121,7 +122,7 @@ input { position:relative; width:100%; height:47px; padding:0 20px; border:none;
 .popupCont { width:100%; height:calc(100% - 40px); padding:10% 20%; background-color:var(--color-white); }
 /* layout */
 .wrapper { width:100%; margin:0 auto;  text-align:center; }
-.dim { position:fixed; top:0; left:0; right:0; bottom:0; display:none; width:100%; height:100%; z-index:100001; background-color:var(--color-charcoal); opacity:.3; }
+.dim { position:fixed; top:0; left:0; right:0; bottom:0; display:none; width:100%; height:100%; z-index:100001; background-color:var(--color-charcoal); opacity:.3; transition:all .3s ease }
 header { position:fixed; z-index:99999; width:100%; height:130px; background-color:var(--color-bg); transition:border .3s ease; }
 header.on { border-bottom:1px solid; border-color:var(--color-main); transition:border .3s ease; }
 .container { padding-top:130px; }
@@ -136,23 +137,23 @@ h1 { width:156px; height:100%; margin-right:30px; color:var(--color-black); font
 h1 a { width:100%; line-height:130px; }
 .navWrap { display:flex; justify-content:flex-end; width:calc(100% - 30px - 156px); height:100%; color:var(--color-main); text-align:right; }
 nav { display:inline-block; height:100%; }
-.depth01 { display:flex; justify-content:center; flex-wrap:wrap; margin:53px 0; }
-.depth01 li { position:relative; height:100%; text-align:right; }
-.depth01 li > a { display:inline-block; margin:0 20px; border-bottom:2px solid transparent; transition:border .3s ease; }
-.depth01 li > a:hover,
-.depth01 li.active  > a { border-bottom:2px solid; border-color:var(--color-main); transition:border .3s ease; }
-.depth01 li > a[href*="javascript"] { position:relative; padding:0 20px 0 0; }
-.depth01 li > a[href*="javascript"]::before { content:""; position:absolute; top:50%; right:0; width:8px; height:2px; border-radius:2px; background-color:var(--color-main); transform:rotate(-45deg); transition:transform .2s ease; }
-.depth01 li > a[href*="javascript"]::after { content:""; position:absolute; top:50%; right:5px; width:8px; height:2px; border-radius:2px; background-color:var(--color-main); transform:rotate(45deg); transition:transform .2s ease; }
-.depth01 li > a[href*="javascript"]:hover::before,
-.depth01 li.active > a[href*="javascript"]::before { transform:rotate(45deg); transition:transform .3s ease; }
-.depth01 li > a[href*="javascript"]:hover::after,
-.depth01 li.active > a[href*="javascript"]::after { transform:rotate(-45deg); transition:transform .3s ease; }
-.depth02 { position:absolute; top:100%; left:0; z-index:2; display:none; padding:10px 0; background-color:var(--color-bg); }
-.depth02 li { display:inline-block; width:100%; height:unset; padding:10px 0; text-align:center; }
-.depth02 li a { display:inline-block; border-bottom:2px solid transparent; transition:border .2s ease; }
-.depth02 li a:hover,
-.depth02 li.active a { border-bottom:2px solid; border-color:var(--color-main); transition:border .2s ease; }
+ul[data-value="depth01"] { display:flex; justify-content:center; flex-wrap:wrap; margin:53px 0; }
+ul[data-value="depth01"] li { position:relative; height:100%; text-align:right; }
+ul[data-value="depth01"] li > a { display:inline-block; margin:0 20px; border-bottom:2px solid transparent; transition:border .3s ease; }
+ul[data-value="depth01"] li > a:hover,
+ul[data-value="depth01"] li.active  > a { border-bottom:2px solid; border-color:var(--color-main); transition:border .3s ease; }
+ul[data-value="depth01"] li > a[href*="javascript"] { position:relative; padding:0 20px 0 0; }
+ul[data-value="depth01"] li > a[href*="javascript"]::before { content:""; position:absolute; top:50%; right:0; width:8px; height:2px; border-radius:2px; background-color:var(--color-main); transform:rotate(-45deg); transition:transform .2s ease; }
+ul[data-value="depth01"] li > a[href*="javascript"]::after { content:""; position:absolute; top:50%; right:5px; width:8px; height:2px; border-radius:2px; background-color:var(--color-main); transform:rotate(45deg); transition:transform .2s ease; }
+ul[data-value="depth01"] li > a[href*="javascript"]:hover::before,
+ul[data-value="depth01"] li.active > a[href*="javascript"]::before { transform:rotate(45deg); transition:transform .3s ease; }
+ul[data-value="depth01"] li > a[href*="javascript"]:hover::after,
+ul[data-value="depth01"] li.active > a[href*="javascript"]::after { transform:rotate(-45deg); transition:transform .3s ease; }
+ul[data-value="depth02"] { position:absolute; top:100%; left:0; z-index:2; display:none; padding:10px 0; background-color:var(--color-bg); }
+ul[data-value="depth02"] li { display:inline-block; width:100%; height:unset; padding:10px 0; text-align:center; }
+ul[data-value="depth02"] li a { display:inline-block; border-bottom:2px solid transparent; transition:border .2s ease; }
+ul[data-value="depth02"] li a:hover,
+ul[data-value="depth02"] li.active a { border-bottom:2px solid; border-color:var(--color-main); transition:border .2s ease; }
 .search { width:20px; height:20px; margin-top:55px; background:url("../images/icon_search.png") center /cover no-repeat; }
 .search a { display:inline-block; width:100%; height:100%; }
 .moMenu { display:none; width:60px; height:60px; }
@@ -343,29 +344,29 @@ footer { background-color:var(--color-main); }
 	/* boardBoxWrap : Featured Packages, Recent Blog Posts */
 	.wrapper .boardBoxWrap ul li { width:100%; margin-right:0; }
 	/* imgBoxWrap : Destination */
-	.wrapper .imgBoxWrap > ul > li { width:100%; margin-bottom:60px; }
-	.wrapper .imgBoxWrap > ul > li:last-child { margin-bottom:0; }
+	.wrapper .imgBoxWrap ul li { width:100%; margin-bottom:60px; }
+	.wrapper .imgBoxWrap ul li:last-child { margin-bottom:0; }
 	.wrapper .imgBoxWrap .imgWrap { height:350px; }
 	/* iconListWrap : Why Travel with Us */
-	.wrapper .iconListWrap > ul > li { width:100%; margin:0 0 50px 0; }
+	.wrapper .iconListWrap ul li { width:100%; margin:0 0 50px 0; }
 	/* popup */
 	.popupCont { padding:20px 60px; }
 	/* slider */
 	.sliderWrap { height:calc(100vh - 60px); }
 	.sliderTit { padding-top:40%; }
-	.sliderTit > strong { font-size:5rem; }
+	.sliderTit strong { font-size:5rem; }
 	/* Featured Packages */
 	.packWrap::before { height:calc(100% - (446px * 4)); }/* imgBoxWrap 4개 높이값 */
 	.packWrap::after { height:calc(100% - (446px * 4)); background:url("../images/bg_01.png") bottom center/auto 100% no-repeat; }
 	/* Recent Reviews */
 	.reviewContWrap::after { height:calc(100% - 40px); }
-	.reviewContWrap > ol > li { width:calc((100vw - 60px - 60px) /5); height:calc((100vw - 60px - 60px) /5); }/* ( 화면넓이 - li margin - inner margin / li 갯수 ) */
-	.reviewContWrap > ul { padding:30px; }
+	.reviewContWrap ol li { width:calc((100vw - 60px - 60px) /5); height:calc((100vw - 60px - 60px) /5); }/* ( 화면넓이 - li margin - inner margin / li 갯수 ) */
+	.reviewContWrap ul { padding:30px; }
 	/* Why Travel with Us */
 	.travelCont .iconListWrap { width:100%; }
 	.travelCont .imgWrap { width:100%; margin:unset; }
 	/* Recommended By */
-	.logoWrap > ul > li { width:100%; margin:20px 0; }
+	.logoWrap ul li { width:100%; margin:20px 0; }
 	/* subscribe */
 	.subscContWrap .imgWrap { width:100%; height:250px; }
 	/* footer */
