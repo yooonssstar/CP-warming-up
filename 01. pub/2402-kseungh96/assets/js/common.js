@@ -18,49 +18,17 @@ function scrollHeaderOn() {
 // pc menu
 function toggleMenuPc() {
 	//jqeury
-	// $("ul[data-value='depth01'] > li").on("mouseenter focusin",function(){
-	// 	$(this).addClass("active");
-	// 	$(this).find("ul[data-value='depth02']").stop().slideDown();
-	// }).on("mouseleave focusout",function(){
-	// 	$(this).removeClass("active");
-	// 	$(this).find("ul[data-value='depth02']").stop().slideUp();
-	// });
-	// $("ul[data-value='depth02'] > li > a").on("focusin",function(){ 
-	// 	$(this).parent("li").addClass("active");
-	// }).on("focusout",function(){
-	// 	$(this).parent("li").removeClass("active");
-	// });
-
-	//javascript
-	let depth01 = document.querySelectorAll("ul[data-value='depth01'] > li > a");
-	
-	depth01.forEach(el => {
-		el.addEventListener("mouseleave",function(){
-			let depth02 = this.nextElementSibling;
-			depth02.style.height = "auto";
-			let depth02He = depth02.clientHeight;
-			depth02.style.height = "0";
-
-			if(el.style.display === "none"){
-				depth02.style.height = depth02He +"px";
-				setTimeout(function(){
-					depth02.style.height = "0";
-				},0);
-			}else{
-				setTimeout(function(){
-					depth02.style.height = depth02He +"px";
-				},0);
-			}
-
-			depth01.forEach(sEl => {
-				if(sEl !== el){
-					if(sEl.style.display === "none"){
-						sEl.click();
-					}
-				}
-			});
-			el.classList.toggle("active");
-		})
+	$("ul[data-value='depth01'] > li").on("mouseenter focusin",function(){
+		$(this).addClass("active");
+		$(this).find("ul[data-value='depth02']").stop().slideDown();
+	}).on("mouseleave focusout",function(){
+		$(this).removeClass("active");
+		$(this).find("ul[data-value='depth02']").stop().slideUp();
+	});
+	$("ul[data-value='depth02'] > li > a").on("focusin",function(){ 
+		$(this).parent("li").addClass("active");
+	}).on("focusout",function(){
+		$(this).parent("li").removeClass("active");
 	});
 }
 
@@ -154,6 +122,7 @@ function reviewAcitve(){
 
 // scrollActive
 function scrollActive() {
+	// jquery 기존
 	let windowScroll = $(window).scrollTop();
 	let windowHeight = $(window).height() / 2
 	let headerHeight = $("header").height();
