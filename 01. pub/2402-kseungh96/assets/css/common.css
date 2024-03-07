@@ -19,7 +19,6 @@
 }
 
 .clearfix,
-.depth01::after,
 .subscWrap::after,
 .inputWrap::after,
 .tyEmail::after {
@@ -99,7 +98,7 @@
 .txtMd {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 500;
+  font-size: 1.6rem;
 }
 .txtLg {
   font-family: "Roboto", sans-serif;
@@ -206,50 +205,42 @@ button {
   padding: 20px 40px;
 }
 .btnYl {
-  background-color: #E7D5AD;
-  border-color: #E7D5AD;
-  color: #3A5065;
+  background-color: #E7D5AD !important;
+  color: #3A5065 !important;
   transition: all 0.2s ease;
 }
 .btnYl:hover {
-  background-color: #3A5065;
-  border-color: unset;
-  color: #E7D5AD;
+  background-color: #3A5065 !important;
+  color: #E7D5AD !important;
   transition: all 0.2s ease;
 }
 .btnYl.btnBor {
-  background-color: transparent;
-  border-color: #E7D5AD;
-  color: #E7D5AD;
-  border: 2px solid;
+  background-color: transparent !important;
+  color: #E7D5AD !important;
+  border: 2px solid #E7D5AD;
 }
 .btnYl.btnBor:hover {
-  background-color: #E7D5AD;
-  border-color: #E7D5AD;
-  color: #3A5065;
+  background-color: #E7D5AD !important;
+  color: #3A5065 !important;
 }
 .btnNv {
-  background-color: #3A5065;
-  border-color: #3A5065;
-  color: #E7D5AD;
+  background-color: #3A5065 !important;
+  color: #E7D5AD !important;
   transition: all 0.2s ease;
 }
 .btnNv:hover {
-  background-color: #E7D5AD;
-  border-color: unset;
-  color: #3A5065;
+  background-color: #E7D5AD !important;
+  color: #3A5065 !important;
   transition: all 0.2s ease;
 }
 .btnNv.btnBor {
-  background-color: transparent;
-  border-color: #3A5065;
-  color: #3A5065;
-  border: 2px solid;
+  background-color: transparent !important;
+  color: #3A5065 !important;
+  border: 2px solid #3A5065;
 }
 .btnNv.btnBor:hover {
-  background-color: #3A5065;
-  border-color: #3A5065;
-  color: #E7D5AD;
+  background-color: #3A5065 !important;
+  color: #E7D5AD !important;
 }
 
 /* input */
@@ -272,7 +263,10 @@ input {
   float: left;
   width: 66.66%;
   padding: 15px 20px 15px 40px;
-  background: url("../images/icon_email_gray.png") left 15px center/15px auto no-repeat;
+  background-image: url("../images/icon_email_gray.png");
+  background-position: left 15px center;
+  background-size: 15px auto;
+  background-repeat: no-repeat;
   background-color: #FFFFFF;
 }
 .inputWrap .tyEmail button {
@@ -282,16 +276,19 @@ input {
 }
 .inputWrap .tySearch input {
   float: left;
-  width: calc(100% - 62px);
-  border: 1px solid;
-  border-color: #383838;
+  width: calc(100% - (47px + 15px));
+  border: 1px solid #383838;
 }
 .inputWrap .tySearch button {
   float: left;
   width: 47px;
   height: 47px;
   margin-left: 15px;
-  background: url("../images/icon_search.png") center/auto 20px no-repeat;
+  background-image: url("../images/icon_search.png");
+  background-position: center;
+  background-size: auto 20px;
+  background-repeat: no-repeat;
+  background-color: #E7D5AD;
 }
 
 /* imgWrap */
@@ -354,7 +351,10 @@ input {
   transform: translate(-50%, 0);
   width: calc(100% - 30px);
   height: calc(100% - 30px);
-  background: url("../images/bg_contbox_01.png") bottom 25px center/100% no-repeat;
+  background-image: url("../images/bg_contbox_01.png");
+  background-position: bottom 25px center;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 .boardBoxWrap a {
   display: inline-block;
@@ -419,7 +419,7 @@ input {
 .boardBoxWrap dl dd p {
   display: inline;
 }
-.boardBoxWrap dl .by::before {
+.boardBoxWrap dl dd.by::before {
   content: "";
   position: absolute;
   top: 2px;
@@ -427,9 +427,12 @@ input {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: url("../images/icon_person.png") center/cover no-repeat;
+  background-image: url("../images/icon_person.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.boardBoxWrap dl .date::before {
+.boardBoxWrap dl dd.date::before {
   content: "";
   position: absolute;
   top: 2px;
@@ -437,7 +440,10 @@ input {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: url("../images/icon_time.png") center/cover no-repeat;
+  background-image: url("../images/icon_time.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .boardBoxWrap .btnWrap {
   width: unset;
@@ -521,36 +527,36 @@ input {
   background-position: top 15px center;
   transition: all 0.2s ease;
 }
+.iconListWrap ul li.fin a {
+  background-image: url("../images/icon_travel_01.png");
+  background-position: top center;
+  background-size: 46px 57px;
+  background-repeat: no-repeat;
+}
+.iconListWrap ul li.fle a {
+  background-image: url("../images/icon_travel_02.png");
+  background-position: top center;
+  background-size: 33px 53px;
+  background-repeat: no-repeat;
+}
+.iconListWrap ul li.qua a {
+  background-image: url("../images/icon_travel_03.png");
+  background-position: top center;
+  background-size: 38px 53px;
+  background-repeat: no-repeat;
+}
+.iconListWrap ul li.ser a {
+  background-image: url("../images/icon_travel_04.png");
+  background-position: top center;
+  background-size: 51px 41px;
+  background-repeat: no-repeat;
+}
 .iconListWrap ul li span {
   display: block;
   margin: 10px 0 20px;
 }
 .iconListWrap ul li strong {
   display: block;
-}
-.iconListWrap ul .fin a {
-  background-image: url("../images/icon_travel_01.png");
-  background-position: top center;
-  background-size: 46px 57px;
-  background-repeat: no-repeat;
-}
-.iconListWrap ul .fle a {
-  background-image: url("../images/icon_travel_02.png");
-  background-position: top center;
-  background-size: 33px 53px;
-  background-repeat: no-repeat;
-}
-.iconListWrap ul .qua a {
-  background-image: url("../images/icon_travel_03.png");
-  background-position: top center;
-  background-size: 38px 53px;
-  background-repeat: no-repeat;
-}
-.iconListWrap ul .ser a {
-  background-image: url("../images/icon_travel_04.png");
-  background-position: top center;
-  background-size: 51px 41px;
-  background-repeat: no-repeat;
 }
 
 /* popup */
@@ -714,11 +720,17 @@ header .moMenu a {
   height: 100%;
 }
 header .moMenu .btnMenu {
-  background: url("../images/icon_menu.png") center right 20px/24px auto no-repeat;
+  background-image: url("../images/icon_menu.png");
+  background-position: center right 20px;
+  background-size: 24px auto;
+  background-repeat: no-repeat;
 }
 header .moMenu .btnClose {
   display: none;
-  background: url("../images/icon_close.png") center right 20px/24px auto no-repeat;
+  background-image: url("../images/icon_close.png");
+  background-position: center right 20px;
+  background-size: 24px auto;
+  background-repeat: no-repeat;
 }
 header .navWrap {
   display: flex;
@@ -820,7 +832,10 @@ header .search {
   width: 20px;
   height: 20px;
   margin-top: 55px;
-  background: url("../images/icon_search.png") center/cover no-repeat;
+  background-image: url("../images/icon_search.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 header .search a {
   display: inline-block;
@@ -845,12 +860,12 @@ header .search a {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: all 0.8s ease;
-  font-family: "Roboto", sans-serif;
   font-size: 9rem;
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
   text-align: center;
   line-height: 1;
+  transition: all 0.8s ease;
 }
 
 .sliderTxt {
@@ -879,14 +894,20 @@ header .search a {
   width: 18px;
   height: 34px;
   padding: 30px;
-  background: url("../images/icon_arrow_white.png") center/auto 34px no-repeat;
+  background-image: url("../images/icon_arrow_white.png");
+  background-position: center;
+  background-size: auto 34px;
+  background-repeat: no-repeat;
   transform: rotate(180deg);
 }
 .sliderWrap .swiper-button-next {
   width: 18px;
   height: 34px;
   padding: 30px;
-  background: url("../images/icon_arrow_white.png") center/auto 34px no-repeat;
+  background-image: url("../images/icon_arrow_white.png");
+  background-position: center;
+  background-size: auto 34px;
+  background-repeat: no-repeat;
 }
 .sliderWrap .swiper-pagination {
   bottom: 66px !important;
@@ -905,7 +926,10 @@ header .search a {
 }
 .sliderWrap .slide01 {
   position: relative;
-  background: url("../images/img_slider_01.png") center/cover no-repeat;
+  background-image: url("../images/img_slider_01.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .sliderWrap .slide01::before {
   content: "";
@@ -920,7 +944,10 @@ header .search a {
 }
 .sliderWrap .slide02 {
   position: relative;
-  background: url("../images/img_slider_02.jpg") center/cover no-repeat;
+  background-image: url("../images/img_slider_02.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .sliderWrap .slide02::before {
   content: "";
@@ -935,7 +962,10 @@ header .search a {
 }
 .sliderWrap .slide03 {
   position: relative;
-  background: url("../images/img_slider_03.jpg") center/cover no-repeat;
+  background-image: url("../images/img_slider_03.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .sliderWrap .slide03::before {
   content: "";
@@ -950,7 +980,10 @@ header .search a {
 }
 .sliderWrap .slide04 {
   position: relative;
-  background: url("../images/img_slider_04.jpg") center/cover no-repeat;
+  background-image: url("../images/img_slider_04.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .sliderWrap .slide04::before {
   content: "";
@@ -1021,10 +1054,10 @@ header .search a {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -2;
   display: inline-block;
   width: 100%;
   height: calc(100% - 310px);
-  z-index: -2;
   background-color: #0C141D;
 }
 .packWrap::after {
@@ -1032,17 +1065,25 @@ header .search a {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
   display: inline-block;
   width: 100%;
   height: calc(100% - 310px);
-  z-index: -1;
-  background: url("../images/bg_01.png") bottom center/100% auto no-repeat fixed;
+  background-image: url("../images/bg_01.png");
+  background-position: bottom center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   opacity: 0.3;
 }
 
 /* Why Travel with Us */
 .travelWrap {
-  background: url("../images/bg_02.png") bottom center/cover no-repeat fixed;
+  background-image: url("../images/bg_02.png");
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .travelWrap .travelCont {
   display: flex;
@@ -1136,8 +1177,10 @@ header .search a {
   display: inline-block;
   width: 14px;
   height: 8px;
-  background: url("../images/img_review_active.png") center no-repeat;
+  background-image: url("../images/img_review_active.png");
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .reviewWrap .reviewContWrap ul {
   position: relative;
@@ -1166,7 +1209,10 @@ header .search a {
   display: inline-block;
   width: 114px;
   height: 20px;
-  background: url("../images/icon_star_off.png") left center/auto 20px no-repeat;
+  background-image: url("../images/icon_star_off.png");
+  background-position: left center;
+  background-size: auto 20px;
+  background-repeat: no-repeat;
 }
 .reviewWrap .reviewContWrap ul li .starWrap .starBg .star {
   position: absolute;
@@ -1174,7 +1220,10 @@ header .search a {
   left: 0;
   display: inline-block;
   height: 100%;
-  background: url("../images/icon_star_on.png") left center/auto 20px no-repeat;
+  background-image: url("../images/icon_star_on.png");
+  background-position: left center;
+  background-size: auto 20px;
+  background-repeat: no-repeat;
 }
 .reviewWrap .reviewContWrap ul li .starWrap .num {
   display: none;
@@ -1242,10 +1291,10 @@ header .search a {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: -2;
   display: inline-block;
   width: 100%;
   height: 72%;
-  z-index: -2;
   background-color: #0C141D;
 }
 .blogWrap::after {
@@ -1253,11 +1302,15 @@ header .search a {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: -1;
   display: inline-block;
   width: 100%;
   height: 72%;
-  z-index: -1;
-  background: url("../images/bg_03.png") bottom center/cover no-repeat fixed;
+  background-image: url("../images/bg_03.png");
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   opacity: 0.2;
 }
 
@@ -1283,7 +1336,10 @@ header .search a {
 .subscContWrap .imgWrap {
   width: 50%;
   height: 100%;
-  background: url("../images/img_subsc_01.png") bottom center/120% auto no-repeat;
+  background-image: url("../images/img_subsc_01.png");
+  background-position: bottom center;
+  background-size: 120% auto;
+  background-repeat: no-repeat;
 }
 .subscContWrap .imgWrap::before {
   content: "";
@@ -1332,7 +1388,10 @@ footer .footerContWrap div ul li a {
   display: inline-block;
   padding: 5px 0 5px 20px;
   color: #D3D3D3;
-  background: url("../images/icon_arrow_gray.png") top 12px left/auto 10px no-repeat;
+  background-image: url("../images/icon_arrow_gray.png");
+  background-position: top 12px left;
+  background-size: auto 10px;
+  background-repeat: no-repeat;
   transition: background 0.2s ease;
 }
 footer .footerContWrap div ul li a:hover {
@@ -1341,15 +1400,22 @@ footer .footerContWrap div ul li a:hover {
 }
 footer .footerContWrap div ul .map a {
   padding: 5px 0 5px 25px;
-  background: url("../images/icon_map.png") top 12px left/12px auto no-repeat;
+  background-image: url("../images/icon_map.png");
+  background-size: 12px auto;
 }
 footer .footerContWrap div ul .tel a {
   padding: 5px 0 5px 25px;
-  background: url("../images/icon_tel.png") top 12px left/12px auto no-repeat;
+  background-image: url("../images/icon_tel.png");
+  background-size: 12px auto;
 }
 footer .footerContWrap div ul .mail a {
   padding: 5px 0 5px 25px;
-  background: url("../images/icon_email_white.png") top 14px left/12px auto no-repeat;
+  background-image: url("../images/icon_email_white.png");
+  background-position: top 14px left;
+  background-size: 12px auto;
+}
+footer .footerContWrap div ul .mail a:hover {
+  background-position: top 14px left 6px;
 }
 footer .footerContWrap div .sns {
   display: flex;
@@ -1361,25 +1427,35 @@ footer .footerContWrap div .sns a {
   height: 40px;
   margin-right: 10px;
   border-radius: 50%;
-  background: center/auto 15px no-repeat;
+  background-position: center;
+  background-size: auto 15px;
+  background-repeat: no-repeat;
 }
 footer .footerContWrap div .sns a:last-child {
   margin-right: 0;
 }
 footer .footerContWrap div .sns .twt {
-  background: url("../images/icon_twiter.png") center/auto 12px no-repeat #50A9EF;
+  background-image: url("../images/icon_twiter.png");
+  background-size: auto 12px;
+  background-color: #50A9EF;
 }
 footer .footerContWrap div .sns .face {
-  background: url("../images/icon_facebook.png") center/auto 15px no-repeat #3A589A;
+  background-image: url("../images/icon_facebook.png");
+  background-color: #3A589A;
 }
 footer .footerContWrap div .sns .google {
-  background: url("../images/icon_google.png") center/auto 12px no-repeat #E14A32;
+  background-image: url("../images/icon_google.png");
+  background-size: auto 12px;
+  background-color: #E14A32;
 }
 footer .footerContWrap div .sns .pin {
-  background: url("../images/icon_pin.png") center/auto 14px no-repeat #CD1E1E;
+  background-image: url("../images/icon_pin.png");
+  background-size: auto 14px;
+  background-color: #CD1E1E;
 }
 footer .footerContWrap div .sns .insta {
-  background: url("../images/icon_insta.png") center/auto 15px no-repeat #3E729C;
+  background-image: url("../images/icon_insta.png");
+  background-color: #3E729C;
 }
 footer .footerCopy {
   display: flex;
@@ -1548,7 +1624,10 @@ footer .footerCopy span strong {
   }
   .packWrap::after {
     height: calc(100% - 800px - 50px);
-    background: url("../images/bg_01.png") bottom center/auto 100% no-repeat;
+    background-image: url("../images/bg_01.png");
+    background-position: bottom center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
   }
   /* Recent Reviews */
   .reviewWrap .reviewContWrap::after {
@@ -1658,7 +1737,10 @@ footer .footerCopy span strong {
   }
   .packWrap::after {
     height: calc(100% - 1784px);
-    background: url("../images/bg_01.png") bottom center/auto 100% no-repeat;
+    background-image: url("../images/bg_01.png");
+    background-position: bottom center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
   }
   /* Recent Reviews */
   .reviewWrap .reviewContWrap::after {
